@@ -133,7 +133,7 @@ resource "aws_instance" "bastion" {
   subnet_id                   = aws_subnet.public[0].id
   associate_public_ip_address = true
 
-  tags = {
-    Name = "${var.environment}-bastion"
-  }
+  tags = merge(local.common_tags, { Name = "bastion" })
+
+  volume_tags = merge(local.common_tags, { Name = "bastion-volume" })
 }
