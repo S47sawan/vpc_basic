@@ -12,7 +12,7 @@ variable "environment" {
 variable "key_name" {
   type        = string
   description = "The AWS key pair to use for resources."
-  default     = "development"
+  default     = "bastionkey"
 }
 
 variable "vpc_cidr" {
@@ -63,6 +63,7 @@ variable "bastion_ami" {
 
   description = "The bastion host AMIs."
 }
+
 
 variable "enable_dns_hostnames" {
   type        = bool

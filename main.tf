@@ -137,3 +137,7 @@ resource "aws_instance" "bastion" {
 
   volume_tags = merge(local.common_tags, { Name = "bastion-volume" })
 }
+resource "aws_key_pair" "web" {
+  key_name   = var.key_name
+  public_key = file("/Users/smihah/.ssh/${var.key_name}.pub")
+}
