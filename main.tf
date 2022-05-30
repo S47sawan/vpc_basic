@@ -3,7 +3,9 @@ resource "aws_vpc" "environment" {
   enable_dns_hostnames = var.enable_dns_hostnames
   enable_dns_support   = var.enable_dns_support
 
-  tags = merge(local.common_tags, { Name = "web-vpc" })
+  tags = {
+    Name = var.environment
+  }
 }
 
 resource "aws_internet_gateway" "environment" {
@@ -133,10 +135,11 @@ resource "aws_instance" "bastion" {
   subnet_id                   = aws_subnet.public[0].id
   associate_public_ip_address = true
 
-  tags = merge(local.common_tags, { Name = "bastion" })
-
-  volume_tags = merge(local.common_tags, { Name = "bastion-volume" })
+  tags = {
+    Name = "${var.environment}-bastion"
+  }
 }
+
 resource "aws_key_pair" "web" {
   key_name   = var.key_name
   public_key = file("/Users/smihah/.ssh/${var.key_name}.pub")
