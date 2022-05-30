@@ -138,7 +138,12 @@ resource "aws_instance" "bastion" {
   tags = {
     Name = "${var.environment}-bastion"
   }
+
+  volume_tags = {
+    Name = "${var.environment}-bastion"
+  }
 }
+
 
 resource "aws_key_pair" "web" {
   key_name   = var.key_name
