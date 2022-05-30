@@ -19,6 +19,7 @@ variable "key_name" {
 variable "vpc_cidr" {
   type        = string
   description = "The CIDR of the VPC."
+  default = "10.0.0.0/16"
 }
 variable "subnet_id" {
   type = list
