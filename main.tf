@@ -147,5 +147,5 @@ resource "aws_instance" "bastion" {
 
 resource "aws_key_pair" "web" {
   key_name   = var.key_name
-  public_key = file("/Users/smihah/.ssh/${var.key_name}.pub")
+  public_key = file("/Users/smihah/.ssh/bastionkey.pub")
 }
