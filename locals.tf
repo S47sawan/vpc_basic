@@ -1,6 +1,6 @@
-locals {
-  common_tags = {
-      environment = "test"
-      Owner = "sa"
-  }
-}
+# locals {
+#   common_tags = {
+#       environment = "test"
+#       Owner = "sa"
+#   }
+# }
