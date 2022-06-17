@@ -36,9 +36,9 @@ output "public_subnet_id" {
 }
 
 output "vpc_id" {
-  value = aws_vpc.tfb.id
+  value = aws_vpc.sa-web-vpc.id
 }
 
 output "cidr" {
-  value = aws_vpc.tfb.cidr_block
+  value = aws_vpc.sa-web-vpc.cidr_block
 }
