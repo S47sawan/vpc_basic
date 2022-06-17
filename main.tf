@@ -23,7 +23,7 @@ resource "aws_subnet" "public" {
   cidr_block              = var.public_subnet
   map_public_ip_on_launch = var.map_public_ip_on_launch
   
-  tags =merge(locals.common_tags,{Name = "sa-public-subnet"}
+  tags =merge(locals.common_tags,{Name = "sa-public-subnet"})
 }
 
 
