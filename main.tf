@@ -8,7 +8,7 @@ resource "aws_vpc" "sa-web-vpc" {
 
 resource "aws_internet_gateway" "sa-web-igw" {
   vpc_id = aws_vpc.sa-web-vpc.id
-  tags =merge(local.common_tags,{Name = sa-web-igw})
+  tags =merge(local.common_tags,{Name = "sa-web-igw"})
   }
 
 
