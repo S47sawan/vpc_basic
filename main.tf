@@ -6,7 +6,7 @@ resource "aws_vpc" "sa-vpc" {
 }
 
 resource "aws_internet_gateway" "sa-igw" {
-  vpc_id = aws_vpc.tfb.id
+  vpc_id = aws_vpc.sa-vpc.id
   tags =merge(local.common_tags,{Name = "${var.name}-sa-igw"})
 }
 
